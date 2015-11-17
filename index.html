@@ -46,7 +46,7 @@
 			<div class='box'>
 				<div id='ind-tier' class='tnew' style='font-size: 18px'>New</div>
 				<div id='n' class='ind-list tnew'  onDrop='Drop(event)' onDragover='AllowDrop(event)'>
-					<img title='Sol'			class='god mage female' src='images/sol.png' id='g70' Draggable='true' onDragstart='Drag(event, this.id)'>
+					<img title='Chiron'			class='god hunter male' src='images/chiron.png' id='g71' Draggable='true' onDragstart='Drag(event, this.id)'>
 				</div>
 				</div>
 			<div id='god-list' class='box' onDrop='Drop(event)' onDragover='AllowDrop(event)'>
@@ -106,6 +106,7 @@
 				<img title='Scylla'			class='god mage female' src='images/scylla.jpg' id='g51' Draggable='true' onDragstart='Drag(event, this.id)'>
 				<img title='Serqet'			class='god assassin female' src='images/serqet.jpg' id='g52' Draggable='true' onDragstart='Drag(event, this.id)'>
 				<img title='Sobek'			class='god guardian male' src='images/sobek.jpg' id='g53' Draggable='true' onDragstart='Drag(event, this.id)'>
+				<img title='Sol'			class='god mage female' src='images/sol.png' id='g70' Draggable='true' onDragstart='Drag(event, this.id)'>
 				<img title='Sun Wukong'		class='god warrior male' src='images/sunwukong.jpg' id='g54' Draggable='true' onDragstart='Drag(event, this.id)'>
 				<img title='Sylvanus'		class='god guardian male' src='images/sylvanus.jpg' id='g55' Draggable='true' onDragstart='Drag(event, this.id)'>
 				<img title='Thanatos'		class='god assassin male' src='images/thanatos.jpg' id='g56' Draggable='true' onDragstart='Drag(event, this.id)'>
@@ -123,7 +124,9 @@
 			
 			<div class='box'>
 				<div class='search'>
-					<input id='search' type='text' placeholder='Filter by class' oninput='DoSearch();'>
+					<input id='search' type='text' placeholder='Filter by class' oninput='DoSearch();' title='Valid searches:
+By class (warrior, assassin, mage, guardian, hunter)
+By gender (male, female)'>
 					<i onclick='javascript:WipeSearch();' class="fa fa-trash-o button"></i>
 				</div>
 				<div id='bottom-rightd'>
