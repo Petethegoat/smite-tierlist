@@ -124,10 +124,7 @@
 			
 			<div class='box'>
 				<div class='search'>
-					<select id='search' type='text' name='Filter by class' onchange='DoSearch();' title='Valid searches:
-By class (warrior, assassin, mage, guardian, hunter)
-By damage type (physical, magical)
-By gender (male, female)'>
+					<select id='search' type='text' name='Filter by class' onchange='DoSearch();'>
 						<option selected>All</option>
 						<option value='warrior'>Warrior</option>
 						<option value='assassin'>Assassin</option>
@@ -139,12 +136,15 @@ By gender (male, female)'>
 						<option value='male'>Male</option>
 						<option value='female'>Female</option>
 					</select>
-					<i onclick='javascript:WipeSearch();' class="fa fa-trash-o button"></i>
 				</div>
 				<div id='bottom-rightd'>
-					<input type='button' onClick='ResetPage()' value='Reset'>
-					<input type='button' onClick='SavePage()' value='Save'>
-					<input type='text' onClick='this.select()' readonly id='save'>
+					<div onclick='SavePage();' class='button outline'>
+						<i class='fa fa-lg fa-floppy-o'></i> Save Url
+					</div>
+					<div onclick='ResetPage();' class='button outline'>
+						<i class='fa fa-lg fa-file-o'></i> New List
+					</div>
+					<input type='text' onclick='this.select()' style='display: none; height: 0px' readonly id='save'>
 				</div>
 			</div>
 		</div>

@@ -41,6 +41,12 @@ function DateTitle()
 	document.getElementById("title").value = "Smite Tierlist " + d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear();
 }
 
+function ResetSearch()
+{
+	var searchBox = document.getElementById("search");
+	searchBox.selectedIndex = 0;
+}
+
 //searching
 function DoSearch()
 {
@@ -71,12 +77,6 @@ function DoSearch()
 	}
 }
 
-function WipeSearch()
-{
-	document.getElementById("search").value = "";
-	DoSearch()
-}
-
 function FindElemsWithClass(search, list)
 {
 	var returnElems = [];
@@ -94,6 +94,7 @@ function BodyLoad()
 {
 	DoCache();
 	LoadPage();
+	ResetSearch();
 }
 
 var gods;
@@ -162,7 +163,8 @@ function SavePage()
 		}		
 		result += $(this).get(0).id + "=" + $(this).get(0).parentNode.id;
 	});
-	ShortenUrl(encodeURI(result), function(shortUrl){save.value = shortUrl; save.select();});
+	UpdateURLBox();
+	ShortenUrl(encodeURI(result), function(shortUrl){save.value = shortUrl; save.select(); UpdateURLBox()});
 }
 
 //dont fuck me please security is for bitches
@@ -181,4 +183,19 @@ function ShortenUrl(url, func)
 			func(response.data.url);
 		}
 	);
+}
+
+//sloppy
+function UpdateURLBox()
+{
+	var save = document.getElementById("save");
+	save.style.display = "inherit";
+	if(save.value === "")
+	{
+		save.style.height = "0px";
+	}
+	else
+	{
+		save.style.height = "15px";
+	}
 }
