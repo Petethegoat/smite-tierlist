@@ -162,6 +162,23 @@ function SavePage()
 		}		
 		result += $(this).get(0).id + "=" + $(this).get(0).parentNode.id;
 	});
-	save.value = result;
-	save.select();
+	ShortenUrl(encodeURI(result), function(shortUrl){save.value = shortUrl; save.select();});
+}
+
+//dont fuck me please security is for bitches
+function ShortenUrl(url, func)
+{
+	$.getJSON(
+		"http://api.bitly.com/v3/shorten?callback=?",
+		{
+			"format": "json",
+			"apiKey": "R_b2c0554aeaeb491e91e710788cbd010d",
+			"login": "petethegoat",
+			"longUrl": url
+		},
+		function(response)
+		{
+			func(response.data.url);
+		}
+	);
 }

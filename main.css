@@ -261,7 +261,8 @@ body
 }
 #bottom-rightd
 {
-	margin: 8px;
+	margin-top: 5px;
+	margin-bottom: 8px;
 	text-align: center;
 }
 #bottom-rightd button, input[type="button"]
@@ -291,17 +292,17 @@ background-color: #555;
 	font-size: 15px;
 	margin-top: 5px;
 }
-.search input[type="text"] {
+.search select {
 	width: 80%;
 	margin: 0 auto;
-	height: 15px;
 	font-family: roboto, sans-serif;
 	font-size: 15px;
-	margin-top: 5px;
 }
 .search
 {
 	text-align: center;
+	margin-top: 8px;
+	font-family: roboto, sans-serif;
 }
 #search
 {
