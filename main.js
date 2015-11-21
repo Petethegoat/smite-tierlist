@@ -47,6 +47,12 @@ function ResetSearch()
 	searchBox.selectedIndex = 0;
 }
 
+function OnSearch()
+{
+	UpdateRandomButton();
+	DoSearch();
+}
+
 //searching
 function DoSearch()
 {
@@ -84,11 +90,65 @@ function FindElemsWithClass(search, list)
 	{
 		if((' ' + list[i].className + ' ').indexOf(' ' + search + ' ') > -1)
 		{
-			returnElems.push(list[i]);
+			returnElems.push(list[i])
 		}
 	}
 	return returnElems;
 }
+
+function UpdateRandomButton()
+{
+	var random = document.getElementById("randomText");
+	var searchBox = document.getElementById("search");
+	var search = searchBox.value.toLowerCase();
+	if(search == "all")
+	{
+		search = "god";
+	}
+	random.textContent = " Random " + search.capitalize();
+}
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+function SelectRandomGod()
+{
+	for(var i = 0; i < gods.length; i++)
+	{
+		gods[i].style.opacity = 0.3;
+	}
+	var randomGod;
+
+	var searchBox = document.getElementById("search");
+	var search = searchBox.value.toLowerCase();
+	if(search == "all")
+	{
+		randomGod = Math.floor(Math.random() * gods.length)
+		for(var i = 0; i < gods.length; i++)
+		{
+			if(i == randomGod)
+			{
+				gods[i].style.opacity = 1;
+				break;
+			}
+		}
+	}
+	else
+	{
+		var searchGods = FindElemsWithClass(search, gods);
+		randomGod = Math.floor(Math.random() * searchGods.length)
+		for(var i = 0; i < searchGods.length; i++)
+		{
+			if(i == randomGod)
+			{
+				searchGods[i].style.opacity = 1;
+				break;
+			}
+		}
+	}
+}
+
 
 function BodyLoad()
 {

@@ -71,14 +71,25 @@ body
 	cursor: pointer;
 }
 
+.no-outline
+{
+	color: #444;
+	transition: color 0.2s;
+}
+
+.no-outline:hover
+{
+	color: #111
+}
+
 .outline
 {
 	display: inline-block;
 	color: #444;
 	border: 2px solid;
 	border-radius: 20px;
-	width: 120px;
-	padding: 2px;
+	min-width: 120px;
+	padding: 2px 6px 2px 6px;
 	transition: color 0.2s;
 }
 
@@ -275,13 +286,13 @@ body
 	margin: 2px;
 	float: left;
 }
-#bottom-rightd
+#save-new
 {
-	margin-top: 5px;
+	margin-top: 8px;
 	margin-bottom: 8px;
 	text-align: center;
 }
-#bottom-rightd input[type="text"] {
+#save-new input[type="text"] {
 	width: 80%;
 	margin: 0 auto;
 	height: 15px;
@@ -289,6 +300,12 @@ body
 	font-size: 15px;
 	margin-top: 5px;
 	transition: height 0.4s;
+}
+#bottom-rightd
+{
+	margin-top: 5px;
+	margin-bottom: 8px;
+	text-align: center;
 }
 .search select {
 	width: 80%;

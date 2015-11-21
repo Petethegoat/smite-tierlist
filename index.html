@@ -15,7 +15,7 @@
 	<div id='top-bar'>
 		<div class='stretch'>
 			<input id='title' type='text' placeholder='Click to title your list!' maxlength='50'>
-			<i onclick='javascript:DateTitle();' class="fa fa-lg fa-inverse fa-calendar-o button" style='bottom: 2px;'></i>
+			<i title="Generate a title for your list with today's date." onclick='DateTitle();' class="fa fa-lg fa-inverse fa-calendar-o button" style='bottom: 2px;'></i>
 		</div>
 	</div>
 
@@ -124,7 +124,7 @@
 			
 			<div class='box'>
 				<div class='search'>
-					<select id='search' type='text' name='Filter by class' onchange='DoSearch();'>
+					<select title='Highlight certain types of god.' id='search' type='text' name='Filter by class' onchange='OnSearch();'>
 						<option selected>All</option>
 						<option value='warrior'>Warrior</option>
 						<option value='assassin'>Assassin</option>
@@ -138,10 +138,19 @@
 					</select>
 				</div>
 				<div id='bottom-rightd'>
-					<div onclick='SavePage();' class='button outline'>
+					<div title='Highlight a random god of the selected type.' onclick='SelectRandomGod();' class='button outline'>
+						<i class='fa fa-lg fa-question-circle'></i><span id='randomText'> Random God</span>
+					</div>
+					<i title='Reset the random god highlighting.' onclick='DoSearch();' class='fa fa-lg fa-ban button no-outline'></i>
+				</div>
+			</div>
+		
+			<div class='box'>
+				<div id='save-new'>
+					<div title='Save this tierlist and create a shortened url for sharing.' onclick='SavePage();' class='button outline'>
 						<i class='fa fa-lg fa-floppy-o'></i> Save Url
 					</div>
-					<div onclick='ResetPage();' class='button outline'>
+					<div title='Reset the page, WIPING ANY CHANGES you have made!' onclick='ResetPage();' class='button outline'>
 						<i class='fa fa-lg fa-file-o'></i> New List
 					</div>
 					<input type='text' onclick='this.select()' style='display: none; height: 0px' readonly id='save'>
