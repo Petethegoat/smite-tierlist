@@ -271,6 +271,7 @@ body
 #god-list
 {
 	height: auto;
+	min-height: 54px;
 }
 @media all and (min-width: 1200px)
 {
