@@ -273,6 +273,10 @@ body
 	height: auto;
 	min-height: 54px;
 }
+#god-list:empty
+{
+	background-color: #3d3;
+}
 @media all and (min-width: 1200px)
 {
 	#god-list
